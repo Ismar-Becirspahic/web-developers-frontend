@@ -1,0 +1,20 @@
+<body>
+<h1>Sign up</h1>
+<div class="wrapper">
+  <form>
+    <input type="email" placeholder="Email">
+    <input type="text" placeholder="Username">
+    <input type="text" placeholder="Full Name">
+    <input type="password" placeholder="Password">
+    <button mat-raised-button color="basic">Sign Up</button>
+  </form>
+  <div class="sign-up">
+    <div class="register">
+      <p>
+        Already registered?
+      </p>
+      <a [routerLink]="'/log-in'">Login</a>
+    </div>
+  </div>
+</div>
+</body>

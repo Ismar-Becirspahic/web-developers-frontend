@@ -14,17 +14,13 @@ body{
   width: 320px;
   margin-left: 40%;
 }
-.filter{
-  margin-left: 10px;
-  border: 2px solid lightgray;
-  background-color: white;
 
+.filter mat-icon{
+  padding: 50%;
+  background-color: white;
+  border: 2px solid lightgray;
 }
-.filter img{
-  width: 20px;
-  height: 20px;
-  padding: 12px;
-}
+
 input[type="text"]{
   font-size: 20px;
   padding: 10px;

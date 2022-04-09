@@ -4,14 +4,14 @@
 <form>
   <input type="email" placeholder="Email">
   <input type="password" placeholder="Password">
-  <button mat-raised-button color="basic">Submit</button>
+  <button mat-raised-button color="basic">Log In</button>
 </form>
 <div class="sign-up">
   <div class="register">
     <p>
       Don't have an account?
     </p>
-    <a href="#">Register</a>
+    <a [routerLink]="'/sign-up'">Register</a>
   </div>
 </div>
 </div>

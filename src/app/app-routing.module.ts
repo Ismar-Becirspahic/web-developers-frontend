@@ -5,6 +5,7 @@ import {HomeComponent} from "./home/home.component";
 import {LogInComponent} from "./log-in/log-in.component";
 import {ContactComponent} from "./contact/contact.component";
 import {Router} from "./routing/router";
+import {SignUpComponent} from "./sign-up/sign-up.component";
 
 
 const routes: Routes = [
@@ -14,6 +15,8 @@ const routes: Routes = [
     component: LogInComponent},
   { path: Router.CONTACT,
     component: ContactComponent},
+  { path: Router.SIGNUP,
+    component: SignUpComponent},
 ];
 
 @NgModule({
