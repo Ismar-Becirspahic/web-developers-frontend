@@ -1,0 +1,25 @@
+div {
+  text-align: center;
+  margin-top: 50px;
+}
+#invalid {
+  font-size: 90px;
+  color: darkslategrey;
+  padding: 20px;
+  margin: 0;
+}
+#bold {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+p {
+  font-family: sans-serif;
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+}
+.button {
+  border: 2px solid darkslategray;
+  border-radius: 10px;
+  margin-top: 15px;
+}
