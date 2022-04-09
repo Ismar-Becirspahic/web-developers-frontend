@@ -1,0 +1,30 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  background-color: #230568;
+}
+.wrapper {
+  width: 1100px;
+  margin: 0 auto;
+}
+img {
+  width: 100px;
+}
+button {
+  color: white;
+  background-color: #230568;
+  border: 1px solid #EA0EF5;
+  border-radius: 8px;
+  margin-right: 20px;
+  display: inline;
+}
+nav {
+  justify-content: space-between;
+  margin-left: 150px;
+}
+button:hover {
+  background-color: #21286B;
+  transition: background-color 0.2s ease-in;
+}
