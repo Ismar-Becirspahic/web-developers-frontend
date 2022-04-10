@@ -1,18 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
-
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './common/footer/footer.component';
@@ -28,6 +20,17 @@ import { ProjectsListComponent } from './projects/components/projects-list/proje
 import { ProjectsFormContainerComponent } from './projects/containers/projects-form-container/projects-form-container.component';
 import { ProjectsListContainerComponent } from './projects/containers/projects-list-container/projects-list-container.component';
 import { ProjectsViewContainerComponent } from './projects/containers/projects-view-container/projects-view-container.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {FormsModule} from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {HttpClientModule} from "@angular/common/http";
+import {MatCardModule} from "@angular/material/card";
+import {MatIconModule} from "@angular/material/icon";
+
 
 @NgModule({
   declarations: [
@@ -53,6 +56,7 @@ import { ProjectsViewContainerComponent } from './projects/containers/projects-v
     MatToolbarModule,
     MatButtonModule,
     AppRoutingModule,
+    MatCardModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     FormsModule,
@@ -63,6 +67,7 @@ import { ProjectsViewContainerComponent } from './projects/containers/projects-v
     MatRippleModule,
     MatListModule,
     MatDialogModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
