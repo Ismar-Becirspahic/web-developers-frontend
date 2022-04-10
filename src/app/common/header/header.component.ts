@@ -11,5 +11,6 @@ export class HeaderComponent {
   public homeRoute = Route.HOME;
   public contactRoute = Route.CONTACT;
   public logInRoute = Route.LOGIN;
+  public projectRoute = Route.PROJECTS;
 
 }
