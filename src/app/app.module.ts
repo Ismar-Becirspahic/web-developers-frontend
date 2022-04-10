@@ -30,6 +30,7 @@ import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import {MatIconModule} from "@angular/material/icon";
     ProjectsFormContainerComponent,
     ProjectsListContainerComponent,
     ProjectsViewContainerComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ import {ProjectsViewContainerComponent} from "./projects/containers/projects-vie
 import {ProjectsResolver} from "./resolver/projects-resolver";
 import {ProjectResponse} from "./routing/project-response";
 import {ProjectsFormContainerComponent} from "./projects/containers/projects-form-container/projects-form-container.component";
+import {SignUpComponent} from "./sign-up/sign-up.component";
 
 
 const routes: Routes = [
@@ -22,6 +23,8 @@ const routes: Routes = [
     children: [
       { path: Route.LOGIN,
         component: LogInComponent },
+      { path: Route.SIGNUP,
+        component: SignUpComponent },
       { path: Route.CONTACT,
         component: ContactComponent },
       { path: Route.HOME,

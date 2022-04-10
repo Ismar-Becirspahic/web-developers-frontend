@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-content>
     <div class="header">
-      <h1>Log in</h1>
+      <h1>Sign up</h1>
     </div>
     <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
       <div class="emailInput">
@@ -9,14 +9,30 @@
           <mat-label>Email</mat-label>
           <input
             formControlName="email"
+            type="email"
             matInput
-            placeholder="Enter email address" required
+            placeholder="Email" required
           />
           <mat-error *ngIf="!loginForm.controls['email'].valid">
             Email is required
           </mat-error>
         </mat-form-field>
       </div>
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            formControlName="email"
+            type="text"
+            matInput
+            placeholder="Username" required
+          />
+          <mat-error *ngIf="!loginForm.controls['username'].valid">
+            Username is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
 
       <div>
           <span>
@@ -38,11 +54,13 @@
       </div>
       <button mat-flat-button color="primary">Login</button>
     </form>
-    <div class="register">
-      <p>
-        Don't have an account?
-      </p>
-      <a [routerLink]="'/sign-up'">Sign up</a>
+    <div class="sign-up">
+      <div class="register">
+        <p>
+          Already registered?
+        </p>
+        <a [routerLink]="'/log-in'">Login</a>
+      </div>
     </div>
   </mat-card-content>
 </mat-card>

@@ -8,5 +8,8 @@ export class Route {
   public static CREATE = 'create';
   public static EDIT = 'edit';
   public static ID = ':id';
+  public static SIGNUP = 'sign-up';
+
+
 }
 
