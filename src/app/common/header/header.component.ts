@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import {Route} from "../../routing/route";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  public homeRoute = Route.HOME;
+  public contactRoute = Route.CONTACT;
+  public logInRoute = Route.LOGIN;
 
 }

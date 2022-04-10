@@ -9,6 +9,7 @@ import { HomeComponent } from './common/home/home.component';
 import { LogInComponent } from './log-in/log-in.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { PageInvalidComponent } from './common/page-invalid/page-invalid.component';
+import { MainComponent } from './common/main/main.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PageInvalidComponent } from './common/page-invalid/page-invalid.compone
     HomeComponent,
     LogInComponent,
     PageInvalidComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
