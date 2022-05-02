@@ -1,2 +1,2 @@
-<app-projects-view *ngIf="project" [project]="project"></app-projects-view>
+<app-projects-view *ngIf="project" [project]="project" (removeProject)="removeProject($event)"></app-projects-view>
 

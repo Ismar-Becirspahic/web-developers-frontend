@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {ProjectInfoEnum} from "../../../model/project-info.enum";
-import {ProjectModel} from "../../../model/project-model";
+import {ProjectInfo} from "../../../model/project-info.enum";
+import {Project} from "../../../model/project.model";
 
 
 @Component({
@@ -9,37 +9,41 @@ import {ProjectModel} from "../../../model/project-model";
   templateUrl: './projects-form.component.html',
   styleUrls: ['./projects-form.component.css']
 })
-export class ProjectsFormComponent {
+export class ProjectsFormComponent implements OnInit {
   @Output()
-  saveProject: EventEmitter<ProjectModel> = new EventEmitter<ProjectModel>();
+  saveProject: EventEmitter<Project> = new EventEmitter<Project>();
 
   @Input()
-  project: ProjectModel | undefined;
-
-  constructor(private formBuilder: FormBuilder) { }
+  project: Project | undefined;
 
   public form!: FormGroup;
-  public projectsInfo = ProjectInfoEnum;
+  public projectsInfo = ProjectInfo;
+
+  constructor(private formBuilder: FormBuilder) {
+  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      [ProjectInfoEnum.id]: [this.project?.[ProjectInfoEnum.id] || ''],
-      [ProjectInfoEnum.name]: [this.project?.[ProjectInfoEnum.name] || '', Validators.required],
-      [ProjectInfoEnum.description]: [this.project?.[ProjectInfoEnum.description] || '', Validators.required],
-      [ProjectInfoEnum.location]: [this.project?.[ProjectInfoEnum.location] || '', Validators.required],
-      [ProjectInfoEnum.startDate]: [this.project?.[ProjectInfoEnum.startDate] || '', Validators.required],
-      [ProjectInfoEnum.endDate]: [this.project?.[ProjectInfoEnum.endDate] || '', Validators.required],
-      [ProjectInfoEnum.price]: [this.project?.[ProjectInfoEnum.price] || '', Validators.required],
+      [ProjectInfo.id]: [this.project?.[ProjectInfo.id] || ''],
+      [ProjectInfo.name]: [this.project?.[ProjectInfo.name] || '', Validators.required],
+      [ProjectInfo.description]: [this.project?.[ProjectInfo.description] || '', Validators.required],
+      [ProjectInfo.location]: [this.project?.[ProjectInfo.location] || '', Validators.required],
+      [ProjectInfo.startDate]: [this.project?.[ProjectInfo.startDate] || ''],
+      [ProjectInfo.endDate]: [this.project?.[ProjectInfo.endDate] || ''],
+      [ProjectInfo.price]: [this.project?.[ProjectInfo.price] || '', Validators.required],
     });
   }
 
   public post(): void {
     if (!this.form.valid) {
       return;
-    } else {
-      this.saveProject.emit(this.form.value);
     }
-
+    this.saveProject.emit(this.form.value);
+    this.resetForm();
   }
-
+  private resetForm(): void {
+    this.form.reset();
+  }
 }
+
+

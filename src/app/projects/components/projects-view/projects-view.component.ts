@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ProjectModel} from "../../../model/project-model";
-import {ProjectInfoEnum} from "../../../model/project-info.enum";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Project} from "../../../model/project.model";
+import {ProjectInfo} from "../../../model/project-info.enum";
 import {Route} from "../../../routing/route";
 
 @Component({
@@ -12,10 +12,17 @@ import {Route} from "../../../routing/route";
 export class ProjectsViewComponent {
 
   @Input()
-  public project!: ProjectModel;
+  public project!: Project;
 
-  public projectInfo = ProjectInfoEnum;
+  public projectInfo = ProjectInfo;
   public route = Route;
+
+  @Output()
+  removeProject: EventEmitter<string> = new EventEmitter<string>()
+
+  public remove(id: string): void {
+    this.removeProject.emit(id);
+  }
 }
 
 

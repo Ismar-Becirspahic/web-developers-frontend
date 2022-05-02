@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {ProjectModel} from "../../../model/project-model";
+import {Project} from "../../../model/project.model";
 import {ProjectResponse} from "../../../routing/project-response";
-import {ProjectInfoEnum} from "../../../model/project-info.enum";
+import {ProjectInfo} from "../../../model/project-info.enum";
 import {Route} from "../../../routing/route";
 import {database} from "../../../database/database";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ProjectService} from "../../../service/project.service";
 
 @Component({
   selector: 'app-projects-form-container',
@@ -13,12 +14,16 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ProjectsFormContainerComponent implements OnInit {
 
-  public project: ProjectModel | undefined;
+  public project: Project | undefined;
 
   private isEditing: boolean = false;
-  private projects: ProjectModel[] = database;
+  private projects: Project[] = database;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router,) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private projectService: ProjectService,
+  ) {
   }
 
   ngOnInit(): void {
@@ -30,15 +35,15 @@ export class ProjectsFormContainerComponent implements OnInit {
     }
   }
 
-  saveProject(project: ProjectModel): void {
+  saveProject(project: Project): void {
     if (this.isEditing) {
-      const existingIndex = this.projects.findIndex(i => i[ProjectInfoEnum.id] === project[ProjectInfoEnum.id]);
+      const existingIndex = this.projects.findIndex(i => i[ProjectInfo.id] === project[ProjectInfo.id]);
       this.projects.splice(existingIndex, 1, project);
+      this.router.navigate([Route.PROJECTS]);
     } else {
-      project[ProjectInfoEnum.id] = new Date().getTime().toString();
-      this.projects.push(project);
+      this.projectService.addProject(project).subscribe(value => {
+        this.router.navigate([Route.PROJECTS]);
+      });
     }
-    this.router.navigate([Route.PROJECTS]);
   }
-
 }

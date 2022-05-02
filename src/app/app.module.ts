@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {IterableDiffers, KeyValueDiffers, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
@@ -31,6 +31,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
 import { SignUpComponent } from './sign-up/sign-up.component';
+import {ProjectResolver} from "./resolver/project-resolver";
+import {ProjectService} from "./service/project.service";
+import {ProjectsResolver} from "./resolver/projects-resolver";
 
 
 @NgModule({
@@ -69,9 +72,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     MatRippleModule,
     MatListModule,
     MatDialogModule,
-
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    ProjectResolver,
+    ProjectService,
+    ProjectsResolver,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

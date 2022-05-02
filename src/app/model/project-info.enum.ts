@@ -1,4 +1,4 @@
-export enum ProjectInfoEnum {
+export enum ProjectInfo {
   id = 'id',
   name = 'name',
   description = 'description',

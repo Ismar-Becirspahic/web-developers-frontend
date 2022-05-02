@@ -10,10 +10,11 @@ import {MainComponent} from "./common/main/main.component";
 import {ProjectsFormComponent} from "./projects/components/projects-form/projects-form.component";
 import {ProjectsListContainerComponent} from "./projects/containers/projects-list-container/projects-list-container.component";
 import {ProjectsViewContainerComponent} from "./projects/containers/projects-view-container/projects-view-container.component";
-import {ProjectsResolver} from "./resolver/projects-resolver";
+import {ProjectResolver} from "./resolver/project-resolver";
 import {ProjectResponse} from "./routing/project-response";
 import {ProjectsFormContainerComponent} from "./projects/containers/projects-form-container/projects-form-container.component";
 import {SignUpComponent} from "./sign-up/sign-up.component";
+import {ProjectsResolver} from "./resolver/projects-resolver";
 
 
 const routes: Routes = [
@@ -32,15 +33,22 @@ const routes: Routes = [
       { path: Route.PROJECTS,
         children: [
           { path: Route.EMPTY,
-            component: ProjectsListContainerComponent },
+            component: ProjectsListContainerComponent,
+            resolve: {
+              [ProjectResponse.PROJECT]: ProjectsResolver,
+            }
+          },
           { path: Route.CREATE,
             component: ProjectsFormContainerComponent },
           { path: Route.ID,
             component: ProjectsViewContainerComponent,
-            resolve: {[ProjectResponse.PROJECT]: ProjectsResolver}, },
+            resolve: {
+            [ProjectResponse.PROJECT]: ProjectResolver},
+          },
           { path: Route.ID + Route.SEPARATOR + Route.EDIT,
             component: ProjectsFormContainerComponent,
-            resolve: {item: ProjectsResolver}, }
+            resolve: {
+            [ProjectResponse.PROJECT]: ProjectResolver}, }
         ]
       },
     ]

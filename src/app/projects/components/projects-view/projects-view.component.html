@@ -2,6 +2,7 @@
 <body class="wrapper">
 <div>
   <button mat-flat-button color="basic" [routerLink]="[route.EDIT]" class="button">Edit</button>
+  <button mat-flat-button color="basic" (click)="remove(project[projectInfo.id]!)" class="button">Delete</button>
   <mat-list>
     <mat-list-item>
       <mat-icon mat-list-icon>language</mat-icon>

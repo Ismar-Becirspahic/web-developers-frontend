@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {ProjectModel} from "../../../model/project-model";
+import {Project} from "../../../model/project.model";
 import {database} from "../../../database/database";
+import {ActivatedRoute, Router} from "@angular/router";
+import {ProjectResponse} from "../../../routing/project-response";
+import {Route} from "../../../routing/route";
+import {ProjectService} from "../../../service/project.service";
 
 @Component({
   selector: 'app-projects-list-container',
@@ -9,16 +13,19 @@ import {database} from "../../../database/database";
 })
 export class ProjectsListContainerComponent implements OnInit {
 
-  constructor() { }
+  public projects: Project[] = [];
+
+  constructor(private activatedRoute:ActivatedRoute, private projectService:ProjectService, private router: Router) { }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe((response: any) => {
+      this.projects = response[ProjectResponse.PROJECTS];
+    });
   }
-  public projects: ProjectModel[] = database;
 
-  removeProject(project: ProjectModel) {
-    const index = this.projects.indexOf(project);
-    if (index > -1) {
-      this.projects.splice(index, 1);
-    }
+  removeProject(id: string) {
+    this.projectService.deleteProject(id).subscribe(value => {
+      this.router.navigate([Route.PROJECTS]);
+    });
   }
 }
