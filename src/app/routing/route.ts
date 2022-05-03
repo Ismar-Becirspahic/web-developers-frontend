@@ -9,5 +9,6 @@ export class Route {
   public static EDIT = 'edit';
   public static ID = ':id';
   public static SIGNUP = 'sign-up';
+  public static PROFILES = 'profiles';
 }
 
