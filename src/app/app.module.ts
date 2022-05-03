@@ -34,6 +34,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import {ProjectResolver} from "./resolver/project-resolver";
 import {ProjectService} from "./service/project.service";
 import {ProjectsResolver} from "./resolver/projects-resolver";
+import { ProfileFormComponent } from './profile/components/profile-form/profile-form.component';
+import { ProfileListComponent } from './profile/components/profile-list/profile-list.component';
+import { ProfileViewComponent } from './profile/components/profile-view/profile-view.component';
+import { ProfileViewContainerComponent } from './profile/containers/profile-view-container/profile-view-container.component';
+import { ProfileListContainerComponent } from './profile/containers/profile-list-container/profile-list-container.component';
+import { ProfileFormContainerComponent } from './profile/containers/profile-form-container/profile-form-container.component';
+import {ProfileResolver} from "./resolver/profile-resolver";
+import {ProfileService} from "./service/profile-service.service";
+import {ProfilesResolver} from "./resolver/profiles-resolver";
 
 
 @NgModule({
@@ -53,6 +62,12 @@ import {ProjectsResolver} from "./resolver/projects-resolver";
     ProjectsListContainerComponent,
     ProjectsViewContainerComponent,
     SignUpComponent,
+    ProfileFormComponent,
+    ProfileListComponent,
+    ProfileViewComponent,
+    ProfileViewContainerComponent,
+    ProfileListContainerComponent,
+    ProfileFormContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +93,9 @@ import {ProjectsResolver} from "./resolver/projects-resolver";
     ProjectResolver,
     ProjectService,
     ProjectsResolver,
+    ProfileResolver,
+    ProfileService,
+    ProfilesResolver,
   ],
   bootstrap: [AppComponent]
 })

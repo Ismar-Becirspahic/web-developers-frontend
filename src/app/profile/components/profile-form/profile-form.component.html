@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="post()" >
+  <h1>Add profile information</h1>
+  <div>
+    <mat-form-field floatLabel="auto">
+      <mat-label>Your name</mat-label>
+      <input type="text" matInput [formControlName]="profileInfoEnum.name">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field floatLabel="always">
+      <mat-label>Your surname</mat-label>
+      <input type="text" matInput [formControlName]="profileInfoEnum.surname">
+    </mat-form-field>
+  </div>
+
+  <div> <mat-form-field floatLabel="always">
+    <mat-label>Your location</mat-label>
+    <input matInput [formControlName]="profileInfoEnum.location">
+  </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field floatLabel="always">
+      <mat-label>Number of projects that you completed</mat-label>
+      <input matInput type="number" class="example-right-align" placeholder="0"  [formControlName]="profileInfoEnum.numberOfProjectsCompleted">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field floatLabel="always">
+      <mat-label>Years of experience</mat-label>
+      <input matInput type="number" class="example-right-align" placeholder="0"  [formControlName]="profileInfoEnum.yearsOfExperience">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field floatLabel="always">
+      <mat-label>Last project that you completed</mat-label>
+      <input matInput type="text" [formControlName]="profileInfoEnum.recentCompletedProject">
+    </mat-form-field>
+  </div>
+  <div>
+    <button type="submit" mat-flat-button color="basic">Add</button>
+  </div>
+</form>
