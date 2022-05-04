@@ -9,7 +9,7 @@ import {ProfileModel} from "../model/profile-model";
 
 export class ProfileService {
 
-  private readonly baseUrl: string = "http://localhost:8080/profile";
+  private readonly baseUrl: string = "http://localhost:8080/profiles";
 
   constructor(private http:HttpClient) {
   }
