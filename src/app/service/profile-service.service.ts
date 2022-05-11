@@ -22,7 +22,7 @@ export class ProfileService {
     return this.http.get<ProfileModel>(`${this.baseUrl}/${id}`);  }
 
   public addProfile(profile:ProfileModel):Observable<ProfileModel> {
-    return this.http.post<ProfileModel>(`${this.baseUrl}`, profile);
+    return this.http.post<ProfileModel>(`${this.baseUrl}/create`, profile);
   }
 
   public deleteProfile(id:string):Observable<ProfileModel> {

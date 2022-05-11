@@ -45,7 +45,6 @@ const routes: Routes = [
         children: [
           { path: Route.EMPTY,
             component: ProjectsListContainerComponent,
-
           },
           { path: Route.CREATE,
             component: ProjectsFormContainerComponent },
