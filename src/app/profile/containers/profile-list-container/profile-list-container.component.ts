@@ -25,9 +25,4 @@ export class ProfileListContainerComponent implements OnInit {
     });
   }
 
-  removeProfile(id: string) {
-    this.profileService.deleteProfile(id).subscribe(value => {
-      this.router.navigate([Route.PROFILES]);
-    });
-  }
 }

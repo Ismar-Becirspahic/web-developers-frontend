@@ -14,18 +14,14 @@ import {ProjectResponse} from "./routing/project-response";
 import {ProjectsFormContainerComponent} from "./projects/containers/projects-form-container/projects-form-container.component";
 import {SignUpComponent} from "./sign-up/sign-up.component";
 import {ProjectsResolver} from "./resolver/projects-resolver";
-import {
-  ProfileFormContainerComponent
-} from "./profile/containers/profile-form-container/profile-form-container.component";
-import {
-  ProfileViewContainerComponent
-} from "./profile/containers/profile-view-container/profile-view-container.component";
+
 import {ProfileResponse} from "./routing/profile-response";
 import {ProfileResolver} from "./resolver/profile-resolver";
 import {
   ProfileListContainerComponent
 } from "./profile/containers/profile-list-container/profile-list-container.component";
 import {ProfilesResolver} from "./resolver/profiles-resolver";
+import {DialogComponent} from "./dialog/dialog.component";
 
 
 const routes: Routes = [
@@ -64,14 +60,17 @@ const routes: Routes = [
 
           },
           { path: Route.CREATE,
-            component: ProfileFormContainerComponent },
-          {
-            path: Route.ID,
-            component: ProfileViewContainerComponent,
+            component: ProfileListContainerComponent },
+
+          { path: Route.ID,
+            component: ProfileListContainerComponent,
+
           },
-          { path: Route.ID + Route.SEPARATOR + Route.EDIT,
-            component: ProfileFormContainerComponent,
-            }
+          {
+            path: Route.EDIT + Route.SEPARATOR + Route.ID,
+            component: ProfileListContainerComponent,
+          },
+
         ]
       },
     ]
