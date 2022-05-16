@@ -1,0 +1,3 @@
+[submodule "web-developers-frontend"]
+    path = web-developers-frontend
+    url = https://github.com/lejladapo/web-developers-frontend.git
