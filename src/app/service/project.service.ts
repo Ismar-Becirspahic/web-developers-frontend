@@ -3,11 +3,12 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Project} from "../model/project.model";
 import {ProfileModel} from "../model/profile-model";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class ProjectService {
 
-  private readonly baseUrl: string = "http://localhost:8080/projects";
+  private readonly baseUrl: string = `${environment.backendUrl}/projects`;
 
   constructor(private http:HttpClient) {
   }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ProfileModel} from "../model/profile-model";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import {ProfileModel} from "../model/profile-model";
 
 export class ProfileService {
 
-  private readonly baseUrl: string = "http://localhost:8080/profiles";
+  private readonly baseUrl: string = `${environment.backendUrl}/profiles`;
 
   constructor(private http:HttpClient) {
   }
