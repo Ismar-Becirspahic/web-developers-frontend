@@ -11,6 +11,7 @@ td, th {
   width: 10%;
 }
 .wrapper{
-  max-width: 1200px;
+  width: 1100px;
   margin: 0 auto;
+  padding: 20px;
 }

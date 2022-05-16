@@ -32,12 +32,7 @@
           </mat-error>
         </mat-form-field>
       </div>
-
-
       <div>
-          <span>
-            <a class="aLink" routerLink="/auth/forgot-password">Forgot Password?</a>
-          </span>
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Password</mat-label>
           <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
@@ -52,14 +47,14 @@
           </mat-error>
         </mat-form-field>
       </div>
-      <button mat-flat-button color="primary">Login</button>
+      <button mat-flat-button color="primary">Sign up</button>
     </form>
     <div class="sign-up">
       <div class="register">
         <p>
           Already registered?
         </p>
-        <a [routerLink]="'/log-in'">Login</a>
+        <a [routerLink]="'/log-in'">Log in</a>
       </div>
     </div>
   </mat-card-content>

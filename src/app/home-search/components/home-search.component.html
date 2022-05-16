@@ -1,0 +1,33 @@
+<div class="wrapper">
+<!--  <div style="margin-top: 30px">-->
+      <mat-card id="right" class="example-card" *ngFor="let item of project">
+        <mat-card-subtitle>Username of the person who posted it</mat-card-subtitle>
+        <mat-card-title>{{item.name}}</mat-card-title>
+        <mat-card-content>
+          <div mat-line>{{item.description}}</div>
+        </mat-card-content>
+        <mat-list>
+        <mat-list-item>
+          <mat-icon mat-list-icon>room</mat-icon>
+          <div mat-line>{{item.location}}</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>date_range</mat-icon>
+          <div mat-line>{{item.startDate}}</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>check_circle</mat-icon>
+          <div mat-line>{{item.endDate}}</div>
+          </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>euro_symbol</mat-icon>
+          <div mat-line>{{item.price}}</div>
+        </mat-list-item>
+        </mat-list>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+          <button mat-button color="primary">BOOK</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+<!--  </div>-->

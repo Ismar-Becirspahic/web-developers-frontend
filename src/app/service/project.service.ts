@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Project} from "../model/project.model";
+import {ProfileModel} from "../model/profile-model";
 
 @Injectable()
 export class ProjectService {
@@ -20,6 +21,10 @@ export class ProjectService {
 
   public addProject(project:Project):Observable<Project> {
     return this.http.post<Project>(`${this.baseUrl}`, project);
+  }
+
+  public editProject(project:Project, id:string):Observable<Project> {
+    return this.http.put<Project>(`${this.baseUrl}/update/${id}`,project);
   }
 
   public deleteProject(id:string):Observable<Project> {

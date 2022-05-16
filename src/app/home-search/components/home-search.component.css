@@ -1,0 +1,11 @@
+.wrapper {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.example-card {
+  margin-bottom: 40px;
+}
+mat-card {
+  width: 50%;
+}

@@ -6,20 +6,17 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatListModule } from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './contact/contact.component';
-import { FooterComponent } from './common/footer/footer.component';
+import { ContactComponent } from './common/contact/contact.component';
 import { HeaderComponent } from './common/header/header.component';
 import { HomeComponent } from './common/home/home.component';
 import { LogInComponent } from './log-in/log-in.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { PageInvalidComponent } from './common/page-invalid/page-invalid.component';
 import { MainComponent } from './common/main/main.component';
-import {ProjectsFormComponent} from './projects/components/projects-form/projects-form.component'
-import { ProjectsViewComponent } from './projects/components/projects-view/projects-view.component';
-import { ProjectsListComponent } from './projects/components/projects-list/projects-list.component';
-import { ProjectsFormContainerComponent } from './projects/containers/projects-form-container/projects-form-container.component';
-import { ProjectsListContainerComponent } from './projects/containers/projects-list-container/projects-list-container.component';
-import { ProjectsViewContainerComponent } from './projects/containers/projects-view-container/projects-view-container.component';
+import {ProjectFormComponent} from './projects/components/project-form/project-form.component'
+import { ProjectListComponent } from './projects/components/project-list/project-list.component';
+import { ProjectFormContainerComponent } from './projects/containers/project-form-container/project-form-container.component';
+import { ProjectListContainerComponent } from './projects/containers/project-list-container/project-list-container.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from "@angular/forms";
@@ -43,29 +40,28 @@ import { DialogComponent } from './dialog/dialog.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
-
-
+import { HomeSearchComponent } from './home-search/components/home-search.component';
+import {HomeSearchContainerComponent} from "./home-search/containers/home-search-container.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectsFormComponent,
+    ProjectFormComponent,
     ContactComponent,
-    FooterComponent,
     HeaderComponent,
     HomeComponent,
     LogInComponent,
     PageInvalidComponent,
     MainComponent,
-    ProjectsViewComponent,
-    ProjectsListComponent,
-    ProjectsFormContainerComponent,
-    ProjectsListContainerComponent,
-    ProjectsViewContainerComponent,
+    ProjectListComponent,
+    ProjectFormContainerComponent,
+    ProjectListContainerComponent,
     SignUpComponent,
     ProfileListComponent,
     ProfileListContainerComponent,
     DialogComponent,
+    HomeSearchComponent,
+    HomeSearchContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,7 +85,7 @@ import {MatSortModule} from "@angular/material/sort";
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
   ],
   providers: [
     ProjectResolver,

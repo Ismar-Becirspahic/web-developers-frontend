@@ -8,11 +8,11 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ProjectService} from "../../../service/project.service";
 
 @Component({
-  selector: 'app-projects-form-container',
-  templateUrl: './projects-form-container.component.html',
-  styleUrls: ['./projects-form-container.component.css']
+  selector: 'app-project-form-container',
+  templateUrl: './project-form-container.component.html',
+  styleUrls: ['./project-form-container.component.css']
 })
-export class ProjectsFormContainerComponent implements OnInit {
+export class ProjectFormContainerComponent implements OnInit {
 
   public project: Project | undefined;
 
