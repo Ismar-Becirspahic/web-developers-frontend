@@ -6,4 +6,6 @@ export enum ProjectInfo {
   startDate = 'startDate',
   endDate = 'endDate',
   price = 'price',
+  unavailable = 'unavailable',
+  postedBy = 'postedBy',
 }

@@ -8,5 +8,6 @@ export interface Project {
   [ProjectInfo.startDate]: string;
   [ProjectInfo.endDate]: string;
   [ProjectInfo.price]: number;
-
+  [ProjectInfo.unavailable]: boolean;
+  [ProjectInfo.postedBy]: string;
 }

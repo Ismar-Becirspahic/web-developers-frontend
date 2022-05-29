@@ -42,6 +42,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import { HomeSearchComponent } from './home-search/components/home-search.component';
 import {HomeSearchContainerComponent} from "./home-search/containers/home-search-container.component";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -65,6 +67,7 @@ import {HomeSearchContainerComponent} from "./home-search/containers/home-search
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     MatSlideToggleModule,
     MatIconModule,
     MatToolbarModule,
@@ -86,6 +89,7 @@ import {HomeSearchContainerComponent} from "./home-search/containers/home-search
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    FlexLayoutModule,
   ],
   providers: [
     ProjectResolver,
