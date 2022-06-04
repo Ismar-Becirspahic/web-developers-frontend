@@ -3,7 +3,7 @@
     <div class="header">
       <h1>Sign up</h1>
     </div>
-    <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+    <form (ngSubmit)="post()" name="loginForm" [formGroup]="loginForm">
       <div class="emailInput">
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Email</mat-label>
@@ -22,7 +22,7 @@
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Username</mat-label>
           <input
-            formControlName="email"
+            formControlName="username"
             type="text"
             matInput
             placeholder="Username" required

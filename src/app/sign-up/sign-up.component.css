@@ -52,3 +52,6 @@ mat-card {
   text-decoration: none;
   color: cornflowerblue;
 }
+.register p{
+  margin: 0;
+}
