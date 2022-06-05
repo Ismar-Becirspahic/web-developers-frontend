@@ -18,16 +18,23 @@ export class ProjectListComponent {
 
   @Input()
   projects: Project[] = [];
-  @Input()
-  items: Project[] = [];
+  // @Input()
+  // items: Project[] = [];
 
   @Output()
   removeProject: EventEmitter<string> = new EventEmitter<string>()
 
   public route = Route;
-  public projectInfo = ProjectInfo;
 
-
+  openDialog() {
+    this.dialog.open(ProjectFormComponent, {
+      width:'30%'
+    }).afterClosed().subscribe(val=>{
+      if (val === 'save'){
+        this.getProjects();
+      }
+    });
+  }
   displayedColumns: string[] = ['id', 'name', 'description','location','startDate','endDate', 'price', 'action'];
   dataSource!: MatTableDataSource<any>;
 

@@ -1,13 +1,44 @@
-<body>
-<div class="search-section">
-  <div class="wrapper">
-
-  </div>
-  <div class="image-text" style="text-align: center">
-    <h1 style="font-size:50px; line-height: 50px">Looking for someone to create you a website?</h1>
-    <h3>You came to the right place</h3>
-    <button mat-button color="primary" mat-raised-button [routerLink]="'/authenticate'">Get Started</button>
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="50%" *ngFor="let projectInfo of project">
+      <mat-card class="mat-elevation-z4" >
+        <mat-card-header>
+          <mat-card-title>{{projectInfo.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="moveRight">
+          <div mat-line>{{projectInfo.description}}</div>
+        </mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon>room</mat-icon>
+            <div mat-line>{{projectInfo.location}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>date_range</mat-icon>
+            <div mat-line>{{projectInfo.startDate}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>check_circle</mat-icon>
+            <div mat-line>{{projectInfo.endDate}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>euro_symbol</mat-icon>
+            <div mat-line>{{projectInfo.price}}</div>
+          </mat-list-item>
+        </mat-list>
+        <mat-divider inset></mat-divider>
+        <ng-container *ngIf="projectInfo.unavailable === false; else elseBlock">
+          <div class="buttonRight" >
+            <button mat-raised-button class="buttonBook">BOOK</button>
+          </div>
+        </ng-container>
+        <ng-template #elseBlock>
+          <div class="buttonRight" >
+            <button mat-raised-button color="warn">UNAVAILABLE</button>
+          </div>
+        </ng-template>
+      </mat-card>
+    </div>
   </div>
 </div>
 
-</body>

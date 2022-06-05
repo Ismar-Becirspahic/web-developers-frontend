@@ -31,29 +31,27 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import {ProjectResolver} from "./resolver/project-resolver";
 import {ProjectService} from "./service/project.service";
 import {ProjectsResolver} from "./resolver/projects-resolver";
-import { ProfileListComponent } from './profile/components/profile-list/profile-list.component';
-import { ProfileListContainerComponent } from './profile/containers/profile-list-container/profile-list-container.component';
 import {ProfileResolver} from "./resolver/profile-resolver";
 import {ProfileService} from "./service/profile-service.service";
 import {ProfilesResolver} from "./resolver/profiles-resolver";
-import { DialogComponent } from './dialog/dialog.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
-import { HomeSearchComponent } from './home-search/components/home-search.component';
-import {HomeSearchContainerComponent} from "./home-search/containers/home-search-container.component";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {CommonModule} from "@angular/common";
 import {provideAuthorizationInterceptor} from "./interceptors/authorization.interceptor";
 import {AuthorizedGuard} from "./guards/authorized.guard";
 import {AuthServiceService} from "./service/auth-service.service";
 import {SignUpService} from "./service/sign-up.service";
+import {HomeContainerComponent} from "./common/home/home-container.component";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectFormComponent,
     ContactComponent,
+    HomeContainerComponent,
     HeaderComponent,
     HomeComponent,
     LogInComponent,
@@ -63,11 +61,6 @@ import {SignUpService} from "./service/sign-up.service";
     ProjectFormContainerComponent,
     ProjectListContainerComponent,
     SignUpComponent,
-    ProfileListComponent,
-    ProfileListContainerComponent,
-    DialogComponent,
-    HomeSearchComponent,
-    HomeSearchContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -106,6 +99,8 @@ import {SignUpService} from "./service/sign-up.service";
     ProfileResolver,
     ProfileService,
     ProfilesResolver,
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }
   ],
   bootstrap: [AppComponent]
 })

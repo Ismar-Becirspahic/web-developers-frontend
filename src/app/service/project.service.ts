@@ -21,7 +21,7 @@ export class ProjectService {
     return this.http.get<Project>(`${this.baseUrl}/${id}`);  }
 
   public addProject(project:Project):Observable<Project> {
-    return this.http.post<Project>(`${this.baseUrl}`, project);
+    return this.http.post<Project>(`${this.baseUrl}/create`, project);
   }
 
   public editProject(project:Project, id:string):Observable<Project> {

@@ -6,6 +6,7 @@ import {Route} from "../../../routing/route";
 import {database} from "../../../database/database";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProjectService} from "../../../service/project.service";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-project-form-container',
