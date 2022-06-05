@@ -2,18 +2,11 @@
 <div class="search-section">
   <div class="wrapper">
 
-    <div class="search">
-      <mat-form-field appearance="standard">
-        <mat-label>Search</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Projects" #input>
-      </mat-form-field>
-      </div>
-
   </div>
   <div class="image-text" style="text-align: center">
     <h1 style="font-size:50px; line-height: 50px">Looking for someone to create you a website?</h1>
     <h3>You came to the right place</h3>
-    <button mat-button color="primary" mat-raised-button [routerLink]="'/log-in'">Get Started</button>
+    <button mat-button color="primary" mat-raised-button [routerLink]="'/authenticate'">Get Started</button>
   </div>
 </div>
 

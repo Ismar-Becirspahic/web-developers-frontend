@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {SignUpService} from "../service/sign-up.service";
-import {AppUserInfoEnum} from "../model/appUser-info.enum";
-import {AppUserModel} from "../model/appUser-model";
+import {Router} from "@angular/router";
+import {Route} from "../routing/route";
 
 
 @Component({
@@ -12,22 +12,18 @@ import {AppUserModel} from "../model/appUser-model";
 })
 export class SignUpComponent implements OnInit {
 
-  @Output()
-  saveProfile: EventEmitter<AppUserModel> = new EventEmitter<AppUserModel>();
-  @Input()
-  appUser: AppUserModel | undefined;
 
   public loginForm!: FormGroup;
   hide: boolean = false;
 
-  constructor(private fb: FormBuilder,private signUpService : SignUpService) {
+  constructor(private fb: FormBuilder,private signUpService : SignUpService, private router : Router) {
   }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      username: [this.appUser?.[AppUserInfoEnum.username] || '', Validators.required],
-      email: [this.appUser?.[AppUserInfoEnum.email] || '', Validators.required],
-      password: [this.appUser?.[AppUserInfoEnum.password] || '', Validators.required, Validators.minLength(6)],
+      username: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
 
     });}
 
@@ -37,7 +33,7 @@ export class SignUpComponent implements OnInit {
         .subscribe({
           next: (res) => {
             alert("Signed up successfully");
-            this.loginForm.reset();
+            this.router.navigate([Route.LOGIN])
           },
           error: () => {
           }

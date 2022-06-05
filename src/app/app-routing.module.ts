@@ -13,9 +13,11 @@ import {SignUpComponent} from "./sign-up/sign-up.component";
 import {ProfileListContainerComponent} from "./profile/containers/profile-list-container/profile-list-container.component";
 import {HomeSearchContainerComponent} from "./home-search/containers/home-search-container.component";
 import {ProjectsResolver} from "./resolver/projects-resolver";
+import {AuthorizedGuard} from "./guards/authorized.guard";
 
 
 const routes: Routes = [
+
   { path: Route.EMPTY,
     component: MainComponent,
     children: [
@@ -36,6 +38,7 @@ const routes: Routes = [
         },
       },
       { path: Route.PROJECTS,
+        canActivateChild: [AuthorizedGuard],
         children: [
           { path: Route.EMPTY,
             component: ProjectListContainerComponent,},
@@ -44,6 +47,7 @@ const routes: Routes = [
         ]
       },
       { path: Route.PROFILES,
+        canActivateChild: [AuthorizedGuard],
         children: [
           { path: Route.EMPTY,
             component: ProfileListContainerComponent,},

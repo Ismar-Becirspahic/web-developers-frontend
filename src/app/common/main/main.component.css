@@ -1,0 +1,29 @@
+body{
+  font-family: sans-serif;
+}
+.wrapper{
+  max-width: 600px;
+  margin: 0 auto;
+}
+.mat-form-field {
+  font-size: 30px;
+  width: 100%;
+}
+
+.image-text{
+  max-width: 600px;
+  margin: 0 auto;
+  color: darkslategrey;
+}
+
+.search-section:before {
+  content: "";
+  background-image: url("https://emptyeasel.com/wp-content/uploads/2019/03/social-media-promotion.jpg");
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}

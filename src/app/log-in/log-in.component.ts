@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
+import {Route} from "../routing/route";
+import {AuthServiceService} from "../service/auth-service.service";
 
 @Component({
   selector: 'app-log-in',
@@ -7,28 +10,33 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
-
+  public loginForm!: FormGroup;
   hide: boolean = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService : AuthServiceService, private router : Router) {
+
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.loginForm= this.fb.group({
+      username: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
   }
 
-  loginForm: FormGroup = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    username: ['', Validators.required, Validators.name],
-    password: ['', [Validators.required, Validators.minLength(6)]],
-  },)
 
 
   onLogin() {
-    if (!this.loginForm.valid) {
-      return;
+    this.loginForm.markAllAsTouched();
+
+    if (this.loginForm.valid) {
+      this.authService.logIn({ ...this.loginForm.value }).subscribe(() => {
+        alert("Logged in successfully")
+        this.router.navigate([Route.PROJECTS]);
+      });
     }
-    console.log(this.loginForm.value);
   }
+
 
 
 }

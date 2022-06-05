@@ -44,6 +44,10 @@ import { HomeSearchComponent } from './home-search/components/home-search.compon
 import {HomeSearchContainerComponent} from "./home-search/containers/home-search-container.component";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {CommonModule} from "@angular/common";
+import {provideAuthorizationInterceptor} from "./interceptors/authorization.interceptor";
+import {AuthorizedGuard} from "./guards/authorized.guard";
+import {AuthServiceService} from "./service/auth-service.service";
+import {SignUpService} from "./service/sign-up.service";
 
 @NgModule({
   declarations: [
@@ -92,6 +96,10 @@ import {CommonModule} from "@angular/common";
     FlexLayoutModule,
   ],
   providers: [
+    provideAuthorizationInterceptor(),
+    AuthorizedGuard,
+    AuthServiceService,
+    SignUpService,
     ProjectResolver,
     ProjectService,
     ProjectsResolver,

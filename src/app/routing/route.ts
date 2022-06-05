@@ -2,7 +2,7 @@ export class Route {
   public static HOME = 'home';
   public static HOME2 = 'home2';
   public static CONTACT = 'contact';
-  public static LOGIN = 'log-in';
+  public static LOGIN = 'authenticate';
   public static PROJECTS = 'projects';
   public static EMPTY = '';
   public static SEPARATOR = '/';
@@ -11,7 +11,6 @@ export class Route {
   public static ID = ':id';
   public static SIGNUP = 'sign-up';
   public static PROFILES = 'profiles';
-  public static DELETE = 'delete';
 
 }
 
