@@ -3,7 +3,6 @@ import {Project} from "../../../model/project.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProjectResponse} from "../../../routing/project-response";
 import {ProjectService} from "../../../service/project.service";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-project-list-container',
@@ -12,6 +11,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 })
 export class ProjectListContainerComponent implements OnInit {
 
+  public items: Project[] = [];
   public projects: Project[] = [];
 
   constructor(private activatedRoute:ActivatedRoute, private projectService:ProjectService, private router: Router) { }

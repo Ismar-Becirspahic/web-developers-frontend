@@ -1,11 +1,6 @@
-export enum ProfileInfoEnum {
+export enum ProfileInfo {
   id = 'id',
-  name = 'name',
-  surname = 'surname',
+  username = 'username',
+  email = 'email',
   password = 'password',
-  location = 'location',
-  numberOfProjectsCompleted = 'numberOfProjectsCompleted',
-  yearsOfExperience = 'yearsOfExperience',
-  recentCompletedProject = 'recentCompletedProject'
-
 }

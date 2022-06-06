@@ -8,7 +8,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './common/contact/contact.component';
 import { HeaderComponent } from './common/header/header.component';
-import { HomeComponent } from './common/home/home.component';
+import { HomeComponent } from './common/home/components/home.component';
 import { LogInComponent } from './log-in/log-in.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { PageInvalidComponent } from './common/page-invalid/page-invalid.component';
@@ -31,9 +31,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import {ProjectResolver} from "./resolver/project-resolver";
 import {ProjectService} from "./service/project.service";
 import {ProjectsResolver} from "./resolver/projects-resolver";
-import {ProfileResolver} from "./resolver/profile-resolver";
-import {ProfileService} from "./service/profile-service.service";
-import {ProfilesResolver} from "./resolver/profiles-resolver";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
@@ -43,7 +40,7 @@ import {provideAuthorizationInterceptor} from "./interceptors/authorization.inte
 import {AuthorizedGuard} from "./guards/authorized.guard";
 import {AuthServiceService} from "./service/auth-service.service";
 import {SignUpService} from "./service/sign-up.service";
-import {HomeContainerComponent} from "./common/home/home-container.component";
+import {HomeContainerComponent} from "./common/home/containers/home-container.component";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @NgModule({
@@ -96,9 +93,6 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
     ProjectResolver,
     ProjectService,
     ProjectsResolver,
-    ProfileResolver,
-    ProfileService,
-    ProfilesResolver,
     { provide: MAT_DIALOG_DATA, useValue: {} },
     { provide: MatDialogRef, useValue: {} }
   ],

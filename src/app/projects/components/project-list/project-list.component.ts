@@ -18,8 +18,6 @@ export class ProjectListComponent {
 
   @Input()
   projects: Project[] = [];
-  // @Input()
-  // items: Project[] = [];
 
   @Output()
   removeProject: EventEmitter<string> = new EventEmitter<string>()

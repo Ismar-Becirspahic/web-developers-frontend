@@ -10,8 +10,8 @@ import {ProjectListContainerComponent} from "./projects/containers/project-list-
 import {SignUpComponent} from "./sign-up/sign-up.component";
 import {ProjectsResolver} from "./resolver/projects-resolver";
 import {AuthorizedGuard} from "./guards/authorized.guard";
-import {HomeContainerComponent} from "./common/home/home-container.component";
-
+import {HomeContainerComponent} from "./common/home/containers/home-container.component";
+import {ProjectResponse} from "./routing/project-response";
 
 const routes: Routes = [
 
@@ -28,7 +28,7 @@ const routes: Routes = [
         canActivate: [AuthorizedGuard],
         component: HomeContainerComponent,
         resolve: {
-          'projects': ProjectsResolver,
+          [ProjectResponse.PROJECTS]: ProjectsResolver,
         },
       },
       { path: Route.CONTACT,

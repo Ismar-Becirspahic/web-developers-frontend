@@ -29,7 +29,7 @@
         <mat-divider inset></mat-divider>
         <ng-container *ngIf="projectInfo.unavailable === false; else elseBlock">
           <div class="buttonRight" >
-            <button mat-raised-button class="buttonBook">BOOK</button>
+            <button mat-raised-button class="buttonBook" (click)="becomeUnavailable(projectInfo.id)">BOOK</button>
           </div>
         </ng-container>
         <ng-template #elseBlock>

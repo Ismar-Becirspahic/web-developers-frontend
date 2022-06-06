@@ -4,10 +4,6 @@ import {ProjectInfo} from "../../../model/project-info.enum";
 import {Project} from "../../../model/project.model";
 import {ProjectService} from "../../../service/project.service";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {ProfileModel} from "../../../model/profile-model";
-import {ProfileInfoEnum} from "../../../model/profile-info.enum";
-import {ProfileService} from "../../../service/profile-service.service";
-
 
 @Component({
   selector: 'app-project-form',

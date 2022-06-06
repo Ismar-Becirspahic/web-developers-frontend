@@ -4,7 +4,10 @@ mat-card {
   text-align: center;
   max-height: 600px;
 }
-
+.button {
+  background-color: darkslategrey;
+  color: white;
+}
 .header{
   text-align: center;
 

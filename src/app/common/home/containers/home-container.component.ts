@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Project} from "../../model/project.model";
+import {Project} from "../../../model/project.model";
 import {ActivatedRoute} from "@angular/router";
-import {ProjectResponse} from "../../routing/project-response";
+import {ProjectResponse} from "../../../routing/project-response";
 
 @Component({
   selector: 'app-home-container',
