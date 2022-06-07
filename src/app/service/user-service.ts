@@ -18,7 +18,7 @@ export class UserService {
   public getUser():Observable<AppUser> {
     return this.http.get<AppUser>(this.baseUrl);
   }
-  public editProject(user:AppUser, id:string):Observable<AppUser> {
+  public editUser(user:AppUser, id:string):Observable<AppUser> {
     return this.http.put<AppUser>(`${this.baseUrl}/${id}`, user);
   }
 

@@ -2,12 +2,10 @@
 <mat-card class="full-width" appearance="outline">
   <h2>First name</h2>
   <h3>{{user.firstName}}</h3>
-  <button mat-raised-button class="button">Edit</button>
 </mat-card>
 <mat-card class="full-width" appearance="outline">
   <h2>Last name</h2>
   <h3>{{user.lastName}}</h3>
-  <button mat-raised-button class="button">Edit</button>
 </mat-card>
   <mat-card class="full-width" appearance="outline">
   <h2>Username</h2>
@@ -17,4 +15,22 @@
   <h2>Email</h2>
   <h3>{{user.email}}</h3>
 </mat-card>
+<h1 mat-dialog-title> Edit user information</h1>
+  <form [formGroup]="form" (ngSubmit)="submit(user.id)" >
+    <mat-card>
+      <mat-form-field>
+      <h2>First Name</h2>
+      <input type="text" matInput formControlName="firstName">
+        </mat-form-field>
+    </mat-card>
+    <mat-card>
+      <mat-form-field>
+      <h2>Last Name</h2>
+      <input type="text" matInput formControlName="lastName">
+        </mat-form-field>
+    </mat-card>
+<div>
+  <button mat-raised-button class="button" [disabled]="form.invalid" type="submit">Update</button>
+</div>
+  </form>
 </div>

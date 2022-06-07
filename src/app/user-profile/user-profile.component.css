@@ -9,7 +9,15 @@ mat-card{
   margin-bottom: 20px;
   margin-top: 20px;
 }
+mat-form-field{
+  width: 100%;
+}
 .button {
   background-color: darkslategrey;
   color: white;
 }
+input{
+  font-size: 18px;
+  border-bottom: darkslategray;
+}
+
