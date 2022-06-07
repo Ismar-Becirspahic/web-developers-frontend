@@ -1,0 +1,33 @@
+<h1 mat-dialog-title> Add project information</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="post()" >
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input type="text" matInput [formControlName]="projectInfo.name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <input type="text" matInput [formControlName]="projectInfo.description">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Location</mat-label>
+      <input type="text" matInput [formControlName]="projectInfo.location">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Start date</mat-label>
+      <input matInput type="number" class="example-right-align" placeholder="0"  [formControlName]="projectInfo.startDate">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>End date</mat-label>
+      <input matInput type="number" class="example-right-align" placeholder="0"  [formControlName]="projectInfo.endDate">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Price</mat-label>
+      <input matInput type="text" [formControlName]="projectInfo.price">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-flat-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 10px" mat-flat-button class="button" (click)="addProject()">{{actionButton}}</button>
+</div>

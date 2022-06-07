@@ -1,4 +1,4 @@
-export enum ProjectInfoEnum {
+export enum ProjectInfo {
   id = 'id',
   name = 'name',
   description = 'description',
@@ -6,4 +6,6 @@ export enum ProjectInfoEnum {
   startDate = 'startDate',
   endDate = 'endDate',
   price = 'price',
+  unavailable = 'unavailable',
+  postedBy = 'postedBy',
 }

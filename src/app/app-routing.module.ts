@@ -1,46 +1,54 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
-import {HomeComponent} from "./common/home/home.component";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule, Routes} from '@angular/router';
 import {LogInComponent} from "./log-in/log-in.component";
-import {ContactComponent} from "./contact/contact.component";
+import {ContactComponent} from "./common/contact/contact.component";
 import {Route} from "./routing/route";
 import {PageInvalidComponent} from "./common/page-invalid/page-invalid.component";
 import {MainComponent} from "./common/main/main.component";
-import {ProjectsFormComponent} from "./projects/components/projects-form/projects-form.component";
-import {ProjectsListContainerComponent} from "./projects/containers/projects-list-container/projects-list-container.component";
-import {ProjectsViewContainerComponent} from "./projects/containers/projects-view-container/projects-view-container.component";
+import {ProjectListContainerComponent} from "./projects/containers/project-list-container/project-list-container.component";
+import {SignUpComponent} from "./sign-up/sign-up.component";
 import {ProjectsResolver} from "./resolver/projects-resolver";
-import {ProjectResponse} from "./routing/project-response";
-import {ProjectsFormContainerComponent} from "./projects/containers/projects-form-container/projects-form-container.component";
-
+import {AuthorizedGuard} from "./guards/authorized.guard";
+import {HomeContainerComponent} from "./common/home/containers/home-container.component";
+import {AppResponse} from "./routing/app-response";
+import {PersonResolver} from "./resolver/person.resolver";
+import {UserProfileComponent} from "./user-profile/user-profile.component";
 
 const routes: Routes = [
-  {
-    path: Route.EMPTY,
+
+  { path: Route.EMPTY,
     component: MainComponent,
     children: [
       { path: Route.LOGIN,
         component: LogInComponent },
+      { path: Route.SIGNUP,
+        component: SignUpComponent },
+      { path: Route.PROFILE,
+        component: UserProfileComponent,
+      resolve:{
+        [AppResponse.PERSON]: PersonResolver,
+      }},
+      { path: Route.HOME,
+        canActivate: [AuthorizedGuard],
+        component: HomeContainerComponent,
+        resolve: {
+          [AppResponse.PERSON]: PersonResolver,
+          [AppResponse.PROJECTS]: ProjectsResolver,
+        },
+      },
       { path: Route.CONTACT,
         component: ContactComponent },
-      { path: Route.HOME,
-        component: HomeComponent },
       { path: Route.PROJECTS,
+        canActivateChild: [AuthorizedGuard],
         children: [
           { path: Route.EMPTY,
-            component: ProjectsListContainerComponent },
+            component: ProjectListContainerComponent,},
           { path: Route.CREATE,
-            component: ProjectsFormContainerComponent },
-          { path: Route.ID,
-            component: ProjectsViewContainerComponent,
-            resolve: {[ProjectResponse.PROJECT]: ProjectsResolver}, },
-          { path: Route.ID + Route.SEPARATOR + Route.EDIT,
-            component: ProjectsFormContainerComponent,
-            resolve: {item: ProjectsResolver}, }
+            component: ProjectListContainerComponent },
         ]
       },
-    ]
+      ],
   },
   { path: '**',
     component: PageInvalidComponent }

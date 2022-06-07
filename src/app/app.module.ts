@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {IterableDiffers, KeyValueDiffers, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
@@ -6,20 +6,17 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatListModule } from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './contact/contact.component';
-import { FooterComponent } from './common/footer/footer.component';
+import { ContactComponent } from './common/contact/contact.component';
 import { HeaderComponent } from './common/header/header.component';
-import { HomeComponent } from './common/home/home.component';
+import { HomeComponent } from './common/home/components/home.component';
 import { LogInComponent } from './log-in/log-in.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { PageInvalidComponent } from './common/page-invalid/page-invalid.component';
 import { MainComponent } from './common/main/main.component';
-import {ProjectsFormComponent} from './projects/components/projects-form/projects-form.component'
-import { ProjectsViewComponent } from './projects/components/projects-view/projects-view.component';
-import { ProjectsListComponent } from './projects/components/projects-list/projects-list.component';
-import { ProjectsFormContainerComponent } from './projects/containers/projects-form-container/projects-form-container.component';
-import { ProjectsListContainerComponent } from './projects/containers/projects-list-container/projects-list-container.component';
-import { ProjectsViewContainerComponent } from './projects/containers/projects-view-container/projects-view-container.component';
+import {ProjectFormComponent} from './projects/components/project-form/project-form.component'
+import { ProjectListComponent } from './projects/components/project-list/project-list.component';
+import { ProjectFormContainerComponent } from './projects/containers/project-form-container/project-form-container.component';
+import { ProjectListContainerComponent } from './projects/containers/project-list-container/project-list-container.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from "@angular/forms";
@@ -30,27 +27,43 @@ import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
-
+import { SignUpComponent } from './sign-up/sign-up.component';
+import {ProjectResolver} from "./resolver/project-resolver";
+import {ProjectService} from "./service/project.service";
+import {ProjectsResolver} from "./resolver/projects-resolver";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatSortModule} from "@angular/material/sort";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {CommonModule} from "@angular/common";
+import {provideAuthorizationInterceptor} from "./interceptors/authorization.interceptor";
+import {AuthorizedGuard} from "./guards/authorized.guard";
+import {AuthService} from "./service/auth.service";
+import {SignUpService} from "./service/sign-up.service";
+import {HomeContainerComponent} from "./common/home/containers/home-container.component";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectsFormComponent,
+    ProjectFormComponent,
     ContactComponent,
-    FooterComponent,
+    HomeContainerComponent,
     HeaderComponent,
     HomeComponent,
     LogInComponent,
     PageInvalidComponent,
     MainComponent,
-    ProjectsViewComponent,
-    ProjectsListComponent,
-    ProjectsFormContainerComponent,
-    ProjectsListContainerComponent,
-    ProjectsViewContainerComponent,
+    ProjectListComponent,
+    ProjectFormContainerComponent,
+    ProjectListContainerComponent,
+    SignUpComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     MatSlideToggleModule,
     MatIconModule,
     MatToolbarModule,
@@ -67,9 +80,24 @@ import {MatIconModule} from "@angular/material/icon";
     MatRippleModule,
     MatListModule,
     MatDialogModule,
-
+    HttpClientModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    FlexLayoutModule,
   ],
-  providers: [],
+  providers: [
+    provideAuthorizationInterceptor(),
+    AuthorizedGuard,
+    AuthService,
+    SignUpService,
+    ProjectResolver,
+    ProjectService,
+    ProjectsResolver,
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
-import {ProjectModel} from "../model/project-model";
+import {Project} from "../model/project.model";
 
-export const database: ProjectModel[] = [
+export const database: Project[] = [
 
-];
+]

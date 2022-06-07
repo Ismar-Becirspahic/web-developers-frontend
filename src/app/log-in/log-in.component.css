@@ -4,6 +4,10 @@ mat-card {
   text-align: center;
   max-height: 600px;
 }
+.button {
+  background-color: darkslategrey;
+  color: white;
+}
 
 .header{
   text-align: center;
@@ -26,13 +30,13 @@ mat-card {
   padding-left: 0px;
 }
 
-.emailInput{
+.usernameInput{
   padding-top: 10px;
 }
 
 .contentBody {
   padding: 60px 1rem;
-  background: darkslategrey;
+  background :#1b6ca8;
   display: block;
 }
 
@@ -41,16 +45,17 @@ mat-card {
   padding-right: 60px;
   text-decoration: none;
 }
-
 .register{
   display: flex;
   align-items: center;
   margin: 15px;
   justify-content: center;
 }
-.register a{
+.register p{
+  margin: 0;
+}
+.sign-up a{
   margin-left: 20px;
   text-decoration: none;
   color: cornflowerblue;
 }
-
