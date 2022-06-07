@@ -14,7 +14,6 @@ import {HomeContainerComponent} from "./common/home/containers/home-container.co
 import {AppResponse} from "./routing/app-response";
 import {PersonResolver} from "./resolver/person.resolver";
 import {UserProfileComponent} from "./user-profile/user-profile.component";
-import {ProjectResponse} from "./routing/project-response";
 
 const routes: Routes = [
 
