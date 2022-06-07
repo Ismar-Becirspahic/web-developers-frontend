@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {Route} from "../routing/route";
-import {AuthServiceService} from "../service/auth-service.service";
+import {AuthService} from "../service/auth.service";
 
 @Component({
   selector: 'app-log-in',
@@ -13,7 +13,7 @@ export class LogInComponent implements OnInit {
   public loginForm!: FormGroup;
   hide: boolean = false;
 
-  constructor(private fb: FormBuilder, private authService : AuthServiceService, private router : Router) {
+  constructor(private fb: FormBuilder, private authService : AuthService, private router : Router) {
 
   }
 
@@ -32,7 +32,7 @@ export class LogInComponent implements OnInit {
     if (this.loginForm.valid) {
       this.authService.logIn({ ...this.loginForm.value }).subscribe(() => {
         alert("Logged in successfully")
-        this.router.navigate([Route.PROJECTS]);
+        this.router.navigate([Route.PROFILE]);
       });
     }
   }

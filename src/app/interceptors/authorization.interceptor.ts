@@ -9,13 +9,13 @@ import {
 import {Provider} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {AuthServiceService} from "../service/auth-service.service";
+import {AuthService} from "../service/auth.service";
 
 export const provideAuthorizationInterceptor = (): Provider => [{
   provide: HTTP_INTERCEPTORS,
   useClass: class implements HttpInterceptor {
     constructor(
-      private authService: AuthServiceService,
+      private authService: AuthService,
     ) {
     }
 
@@ -43,5 +43,5 @@ export const provideAuthorizationInterceptor = (): Provider => [{
     }
   },
   multi: true,
-  deps: [AuthServiceService]
+  deps: [AuthService]
 }];

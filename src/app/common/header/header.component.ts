@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Route} from "../../routing/route";
+import {AuthService} from "../../service/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -12,5 +13,9 @@ export class HeaderComponent {
   public contactRoute = Route.CONTACT;
   public logInRoute = Route.LOGIN;
   public projectRoute = Route.PROJECTS;
+  public profileRoute = Route.PROFILE;
+  constructor(public authService: AuthService) {
+  }
+
 
 }

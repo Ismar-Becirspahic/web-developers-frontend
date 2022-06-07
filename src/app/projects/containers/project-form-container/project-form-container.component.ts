@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Project} from "../../../model/project.model";
-import {ProjectResponse} from "../../../routing/project-response";
+import {AppResponse} from "../../../routing/app-response";
 import {ProjectInfo} from "../../../model/project-info.enum";
 import {Route} from "../../../routing/route";
 import {database} from "../../../database/database";
@@ -30,7 +30,7 @@ export class ProjectFormContainerComponent implements OnInit {
     this.isEditing = this.activatedRoute.snapshot.url[this.activatedRoute.snapshot.url.length - 1].path === Route.EDIT;
     if (this.isEditing) {
       this.activatedRoute.data.subscribe((response: any) => {
-        this.project = response[ProjectResponse.PROJECT];
+        this.project = response[AppResponse.PROJECT];
       });
     }
   }

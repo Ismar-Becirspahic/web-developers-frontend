@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
-import {SignInForm} from "../model/sign-in-form.interface";
+import {AppUser} from "../model/app-user.model";
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,10 @@ export class SignUpService {
   constructor(private http:HttpClient) {
   }
 
-  public createUser(appUser: SignInForm):Observable<SignInForm> {
-    return this.http.post<SignInForm>(`${this.baseUrl}`, appUser);
+  public createUser(appUser: AppUser):Observable<AppUser> {
+    return this.http.post<AppUser>(`${this.baseUrl}`, appUser);
   }
-  public getUsers():Observable<SignInForm[]> {
-    return this.http.get<SignInForm[]>(`${this.baseUrl}`);
+  public getUsers():Observable<AppUser[]> {
+    return this.http.get<AppUser[]>(`${this.baseUrl}`);
   }
 }

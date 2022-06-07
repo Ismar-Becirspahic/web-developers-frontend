@@ -38,10 +38,11 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {CommonModule} from "@angular/common";
 import {provideAuthorizationInterceptor} from "./interceptors/authorization.interceptor";
 import {AuthorizedGuard} from "./guards/authorized.guard";
-import {AuthServiceService} from "./service/auth-service.service";
+import {AuthService} from "./service/auth.service";
 import {SignUpService} from "./service/sign-up.service";
 import {HomeContainerComponent} from "./common/home/containers/home-container.component";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
     ProjectFormContainerComponent,
     ProjectListContainerComponent,
     SignUpComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,7 +90,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   providers: [
     provideAuthorizationInterceptor(),
     AuthorizedGuard,
-    AuthServiceService,
+    AuthService,
     SignUpService,
     ProjectResolver,
     ProjectService,

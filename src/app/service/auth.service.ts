@@ -4,13 +4,13 @@ import {HttpClient} from "@angular/common/http";
 import {mergeMap, Observable, of} from "rxjs";
 import {Router} from "@angular/router";
 import {Route} from "../routing/route";
-import {SignInForm} from "../model/sign-in-form.interface";
-import {AuthResponse} from "../model/auth-response.interface";
+import {AppUser} from "../model/app-user.model";
+import {AuthResponse} from "../model/auth-response.model";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthService {
   private readonly baseUrl: string = `${environment.backendUrl}/authenticate`;
 
   private jwt: string | null = null;
@@ -25,7 +25,7 @@ export class AuthServiceService {
     return this.jwt;
   }
 
-  public logIn(signInForm: SignInForm): Observable<void> {
+  public logIn(signInForm: AppUser): Observable<void> {
     const body = {
       username: signInForm.username,
       password: signInForm.password,
@@ -38,6 +38,10 @@ export class AuthServiceService {
       })
     );
   }
+  loggedIn(){
+    return !!this.jwt;
+  }
+
 
   public goToLogin():void {
     this.router.navigate([Route.LOGIN]);

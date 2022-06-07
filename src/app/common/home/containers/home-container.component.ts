@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Project} from "../../../model/project.model";
 import {ActivatedRoute} from "@angular/router";
-import {ProjectResponse} from "../../../routing/project-response";
+import {AppResponse} from "../../../routing/app-response";
 
 @Component({
   selector: 'app-home-container',
@@ -16,7 +16,7 @@ export class HomeContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
-      this.projects = response[ProjectResponse.PROJECTS];
+      this.projects = response[AppResponse.PROJECTS];
     });
   }
 

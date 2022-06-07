@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Project} from "../../../model/project.model";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ProjectResponse} from "../../../routing/project-response";
+import {AppResponse} from "../../../routing/app-response";
 import {ProjectService} from "../../../service/project.service";
 
 @Component({
@@ -18,7 +18,7 @@ export class ProjectListContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
-      this.projects = response[ProjectResponse.PROJECTS];
+      this.projects = response[AppResponse.PROJECTS];
     });
   }
 
