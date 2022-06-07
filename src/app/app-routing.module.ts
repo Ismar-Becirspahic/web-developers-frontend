@@ -25,7 +25,7 @@ const routes: Routes = [
       { path: Route.CONTACT,
         component: ContactComponent },
       { path: Route.HOME,
-        // canActivate: [AuthorizedGuard],
+        canActivate: [AuthorizedGuard],
         component: HomeContainerComponent,
         resolve: {
           [ProjectResponse.PROJECTS]: ProjectsResolver,
@@ -34,7 +34,7 @@ const routes: Routes = [
       { path: Route.CONTACT,
         component: ContactComponent },
       { path: Route.PROJECTS,
-        // canActivateChild: [AuthorizedGuard],
+        canActivateChild: [AuthorizedGuard],
         children: [
           { path: Route.EMPTY,
             component: ProjectListContainerComponent,},
