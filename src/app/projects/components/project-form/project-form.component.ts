@@ -18,7 +18,6 @@ export class ProjectFormComponent implements OnInit {
   project: Project | undefined;
 
   public form!: FormGroup;
-  public projectsInfo = ProjectInfo;
 
   public projectInfo = ProjectInfo;
   public actionButton : string = 'Save';
@@ -64,13 +63,13 @@ export class ProjectFormComponent implements OnInit {
         this.projectService.addProject(this.form.value)
           .subscribe({
             next: (res) => {
-              alert("Profile information added successfully");
+              alert("Project information added successfully");
               this.form.reset();
               this.dialogRef.close('save');
               console.log(res)
             },
             error: () => {
-              alert("Error while adding profile information")
+              alert("Error while adding project information")
             }
           })
       }
@@ -82,7 +81,7 @@ export class ProjectFormComponent implements OnInit {
     this.projectService.editProject(this.form.value,this.editData.id)
       .subscribe({
         next: (res)=>{
-          alert("Profile updated successfully");
+          alert("Project updated successfully");
           this.form.reset();
           this.dialogRef.close('update');
           console.log(res);

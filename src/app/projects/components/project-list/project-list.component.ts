@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Project} from "../../../model/project.model";
-import {ProjectInfo} from "../../../model/project-info.enum";
 import {Route} from "../../../routing/route";
 import {ProjectService} from "../../../service/project.service";
 import {MatTableDataSource} from "@angular/material/table";
