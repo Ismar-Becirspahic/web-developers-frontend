@@ -9,9 +9,12 @@ mat-form-field {
   margin: 10px;
 }
 button {
-  border: 2px solid darkslategray;
   border-radius: 10px;
   margin-top: 15px;
+}
+.button {
+  background-color: darkslategrey;
+  color: white;
 }
 .example-right-align {
   text-align: right;
