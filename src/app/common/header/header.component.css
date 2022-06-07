@@ -15,6 +15,7 @@ button {
   color: white;
   display: inline;
   background-color: darkslategrey;
+  margin-left: 5px;
 }
 nav {
   display: flex;

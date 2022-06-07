@@ -13,14 +13,13 @@ import {Project} from "../model/project.model";
 })
 export class UserService {
   private readonly baseUrl: string = `${environment.backendUrl}/profile`;
-  constructor(
-    private http: HttpClient,
-  ) {
-  }
+  constructor(private http: HttpClient) {}
+
   public getUser():Observable<AppUser> {
     return this.http.get<AppUser>(this.baseUrl);
   }
-  public updateFirstName(user : AppUser, id:string):Observable<AppUser> {
+  public editProject(user:AppUser, id:string):Observable<AppUser> {
     return this.http.put<AppUser>(`${this.baseUrl}/${id}`, user);
   }
+
 }

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {AppUser} from "../model/app-user.model";
-import {ProjectService} from "../service/project.service";
 import {UserService} from "../service/user-service";
 import {ActivatedRoute} from "@angular/router";
 import {AppResponse} from "../routing/app-response";
@@ -12,7 +11,7 @@ import {AppResponse} from "../routing/app-response";
 })
 export class UserProfileComponent implements OnInit {
   public user : AppUser | undefined;
-  constructor(private projectService: ProjectService, private userService: UserService, private activatedRoute : ActivatedRoute) {
+  constructor(private userService: UserService, private activatedRoute : ActivatedRoute) {
   }
 
   ngOnInit(): void {
