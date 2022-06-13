@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
-import {Project} from "../../../model/project.model";
+import {Project} from "../../../models/project.model";
 import {Route} from "../../../routing/route";
-import {ProjectService} from "../../../service/project.service";
+import {ProjectService} from "../../../services/project.service";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";

@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { ContactComponent } from './common/contact/contact.component';
 import { HeaderComponent } from './common/header/header.component';
 import { HomeComponent } from './common/home/components/home.component';
-import { LogInComponent } from './log-in/log-in.component';
+import { LogInComponent } from './common/log-in/log-in.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { PageInvalidComponent } from './common/page-invalid/page-invalid.component';
 import { MainComponent } from './common/main/main.component';
@@ -27,10 +27,10 @@ import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
-import { SignUpComponent } from './sign-up/sign-up.component';
-import {ProjectResolver} from "./resolver/project-resolver";
-import {ProjectService} from "./service/project.service";
-import {ProjectsResolver} from "./resolver/projects-resolver";
+import { SignUpComponent } from './common/sign-up/sign-up.component';
+import {ProjectResolver} from "./resolvers/project-resolver";
+import {ProjectService} from "./services/project.service";
+import {ProjectsResolver} from "./resolvers/projects-resolver";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
@@ -38,11 +38,11 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {CommonModule} from "@angular/common";
 import {provideAuthorizationInterceptor} from "./interceptors/authorization.interceptor";
 import {AuthorizedGuard} from "./guards/authorized.guard";
-import {AuthService} from "./service/auth.service";
-import {SignUpService} from "./service/sign-up.service";
+import {AuthService} from "./services/auth.service";
+import {SignUpService} from "./services/sign-up.service";
 import {HomeContainerComponent} from "./common/home/containers/home-container.component";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileComponent } from './common/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [

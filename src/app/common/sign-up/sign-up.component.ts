@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import {SignUpService} from "../service/sign-up.service";
+import {SignUpService} from "../../services/sign-up.service";
 import {Router} from "@angular/router";
-import {Route} from "../routing/route";
+import {Route} from "../../routing/route";
 
 
 @Component({
@@ -22,7 +22,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
 
     });}

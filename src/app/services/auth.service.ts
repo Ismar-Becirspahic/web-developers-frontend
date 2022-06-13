@@ -4,14 +4,14 @@ import {HttpClient} from "@angular/common/http";
 import {mergeMap, Observable, of} from "rxjs";
 import {Router} from "@angular/router";
 import {Route} from "../routing/route";
-import {AppUser} from "../model/app-user.model";
-import {AuthResponse} from "../model/auth-response.model";
+import {AppUser} from "../models/app-user.model";
+import {AuthResponse} from "../models/auth-response.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly baseUrl: string = `${environment.backendUrl}/authenticate`;
+  private readonly baseUrl: string = `${environment.backendUrl}/login`;
 
   private jwt: string | null = null;
 

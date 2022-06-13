@@ -1,7 +1,7 @@
 export class Route {
   public static HOME = 'home';
   public static CONTACT = 'contact';
-  public static LOGIN = 'authenticate';
+  public static LOGIN = 'login';
   public static PROJECTS = 'projects';
   public static EMPTY = '';
   public static CREATE = 'create';

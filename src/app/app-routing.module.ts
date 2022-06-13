@@ -1,19 +1,19 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {LogInComponent} from "./log-in/log-in.component";
+import {LogInComponent} from "./common/log-in/log-in.component";
 import {ContactComponent} from "./common/contact/contact.component";
 import {Route} from "./routing/route";
 import {PageInvalidComponent} from "./common/page-invalid/page-invalid.component";
 import {MainComponent} from "./common/main/main.component";
 import {ProjectListContainerComponent} from "./projects/containers/project-list-container/project-list-container.component";
-import {SignUpComponent} from "./sign-up/sign-up.component";
-import {ProjectsResolver} from "./resolver/projects-resolver";
+import {SignUpComponent} from "./common/sign-up/sign-up.component";
+import {ProjectsResolver} from "./resolvers/projects-resolver";
 import {AuthorizedGuard} from "./guards/authorized.guard";
 import {HomeContainerComponent} from "./common/home/containers/home-container.component";
 import {AppResponse} from "./routing/app-response";
-import {PersonResolver} from "./resolver/person.resolver";
-import {UserProfileComponent} from "./user-profile/user-profile.component";
+import {PersonResolver} from "./resolvers/person.resolver";
+import {UserProfileComponent} from "./common/user-profile/user-profile.component";
 
 const routes: Routes = [
 

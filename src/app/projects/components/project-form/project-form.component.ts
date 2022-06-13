@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {ProjectInfo} from "../../../model/project-info.enum";
-import {Project} from "../../../model/project.model";
-import {ProjectService} from "../../../service/project.service";
+import {ProjectInfo} from "../../../models/project-info.enum";
+import {Project} from "../../../models/project.model";
+import {ProjectService} from "../../../services/project.service";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({

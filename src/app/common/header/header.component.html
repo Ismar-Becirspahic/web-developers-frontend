@@ -3,11 +3,11 @@
 
     <nav>
       <img src="https://acte.ltd/static/media/logo-acte-solutions-white.31f43876.png">
-      <button mat-raised-button color="basic" [routerLink]="homeRoute">Home</button>
-      <button mat-raised-button color="basic" [routerLink]="contactRoute">Contact</button>
-      <button mat-raised-button color="basic" [routerLink]="projectRoute">Projects</button>
-      <button mat-raised-button color="basic" *ngIf="authService.loggedIn()" [routerLink]="profileRoute" >Profile</button>
-      <button mat-raised-button color="basic" *ngIf="!authService.loggedIn()" [routerLink]="logInRoute">Log in</button>
+      <button mat-button color="basic" [routerLink]="homeRoute">Home</button>
+      <button mat-button color="basic" [routerLink]="contactRoute">Contact</button>
+      <button mat-button color="basic" [routerLink]="projectRoute">Projects</button>
+      <button mat-button color="basic" *ngIf="authService.loggedIn()" [routerLink]="profileRoute" >Profile</button>
+      <button mat-button color="basic" *ngIf="!authService.loggedIn()" [routerLink]="logInRoute">Login</button>
     </nav>
   </section>
 </header>

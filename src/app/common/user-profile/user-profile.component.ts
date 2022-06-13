@@ -1,10 +1,10 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
-import {AppUser} from "../model/app-user.model";
-import {UserService} from "../service/user-service";
+import {AppUser} from "../../models/app-user.model";
+import {UserService} from "../../services/user-service";
 import {ActivatedRoute} from "@angular/router";
-import {AppResponse} from "../routing/app-response";
+import {AppResponse} from "../../routing/app-response";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ProjectInfo} from "../model/project-info.enum";
+import {ProjectInfo} from "../../models/project-info.enum";
 
 @Component({
   selector: 'app-user-profile',

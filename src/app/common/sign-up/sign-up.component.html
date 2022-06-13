@@ -16,6 +16,9 @@
           <mat-error *ngIf="!loginForm.controls['email'].valid">
             Email is required
           </mat-error>
+          <mat-error *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid" >
+            Please provide a valid email address
+            </mat-error>
         </mat-form-field>
       </div>
       <div class="emailInput">
@@ -45,9 +48,12 @@
           <mat-error *ngIf="!loginForm.controls['password'].valid">
             Password is required
           </mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].touched" >
+            Password must be min 6 characters long
+          </mat-error>
         </mat-form-field>
       </div>
-      <button mat-flat-button class="button">Sign up</button>
+      <button mat-flat-button class="button" [disabled]="loginForm.invalid">Sign up</button>
     </form>
     <div class="sign-up">
       <div class="register">

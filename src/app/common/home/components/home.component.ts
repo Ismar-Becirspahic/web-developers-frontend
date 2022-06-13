@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {Route} from "../../../routing/route";
-import {Project} from "../../../model/project.model";
-import {ProjectService} from "../../../service/project.service";
+import {Project} from "../../../models/project.model";
+import {ProjectService} from "../../../services/project.service";
 
 @Component({
   selector: 'app-home',

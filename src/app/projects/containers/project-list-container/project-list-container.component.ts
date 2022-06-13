@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Project} from "../../../model/project.model";
+import {Project} from "../../../models/project.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AppResponse} from "../../../routing/app-response";
-import {ProjectService} from "../../../service/project.service";
+import {ProjectService} from "../../../services/project.service";
 
 @Component({
   selector: 'app-project-list-container',
